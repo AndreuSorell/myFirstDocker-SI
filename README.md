@@ -108,7 +108,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 ```
 
-hacemos un docker run de nuevo y comprobamos que el contador vuelve estar en 1:
+Hacemos un docker run de nuevo y comprobamos que el contador vuelve estar en 1:
 
 <img src="./images/counterStart.png"></img>
 
