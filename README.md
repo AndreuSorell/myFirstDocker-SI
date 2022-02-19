@@ -1,6 +1,6 @@
 # myFirstDocker-SI
 
-Nuestra primera app dockerizada.
+Mi primera app dockerizada con @AndreuSorell
 Es una simple aplicación que usa php y el servidor web Apache.
 
 <hr>
