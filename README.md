@@ -1,5 +1,6 @@
 # myFirstDocker-SI
 
-This is our first dockerized app.
+Nuestra primera app dockerizada.
+Es una simple aplicación que usa php y el servidor web Apache.
 
-It is a simple web application done with php and APACHE web server.
+<hr>
