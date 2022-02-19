@@ -111,5 +111,46 @@ hacemos un docker run de nuevo y comprobamos que el contador vuelve estar en 1:
 
 <img src="./images/counterStart.png"></img>
 
+Ahora queremos conseguir guardar el estado de la aplicación, es decir, el último número del contador, para ello hay que crear un volumen para mantener la persistencia de datos.
+
+El script persist.sh lo hará por nosotros
+
+``` bash
+joan@portatilacerjoan:~/sistemas/docker/p1/primer-docker$ bash persist.sh
+entrypoint.sh
+total 156
+-rwxrwxr-x 1 root root 97677 Feb 19 18:37 2022-02-19-183707_784x325_scrot.png
+-rwxrwxr-x 1 root root   872 Dec  9 15:31 Dockerfile
+-rwxrwxr-x 1 root root    35 Dec  9 15:31 README.md
+-rwxrwxr-x 1 root root   243 Dec  9 15:31 build.sh
+-rwxrwxr-x 1 root root   210 Dec  9 15:31 debug.sh
+-rwxrwxr-x 1 root root   424 Dec  9 15:31 entrypoint.sh
+-rwxrwxr-x 1 root root 10701 Feb 19 18:45 index.html
+-rwxrwxr-x 1 root root    75 Dec  9 15:31 install-virtualbox-macos.sh
+-rwxrwxr-x 1 root root   330 Dec  9 15:31 persist.sh
+-rwxrwxr-x 1 root root   860 Dec  9 15:31 php.conf
+drwxrwxr-x 1 root root  4096 Dec  9 15:31 public_html
+-rwxrwxr-x 1 root root   227 Dec  9 15:31 run.sh
+-rwxrwxr-x 1 root root   320 Dec  9 15:31 shell.sh
+-rwxrwxr-x 1 root root   127 Dec  9 15:31 stop.sh
+drwxr-xr-x 2 root 4096 Feb  7 20:41 /data
+total 4
+-rw-r--r-- 1 www-data www-data 2 Feb 19 19:24 counter.txt
+
+
+----> Point your browser at http://localhost:8086/public_html/
+
+
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.17.0.3. Set the 'ServerName' directive globally to suppress this message
+
+
+```
+
+Y efectivamente, ha habido persistencia de datos y el contador está donde lo habíamos dejado
+
+<img src="./images/persist.png">
+
+
+Finalmente ejecutamos el script run.sh para lanzar el contenedor en modo demonio y que se ejecute en segundo plano además de sin usar persistencia de datos, por lo tanto el contador volverá a estar en 1.
 
 
